@@ -1,0 +1,10 @@
+wfxr/forgit
+agkozak/zsh-z
+mafredri/zsh-async
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+zdharma/history-search-multi-word
+
+## These plugins must be last.
+sindresorhus/pure
+zdharma/fast-syntax-highlighting
