@@ -1,4 +1,3 @@
-wfxr/forgit
 agkozak/zsh-z
 mafredri/zsh-async
 zsh-users/zsh-completions

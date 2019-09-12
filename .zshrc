@@ -9,9 +9,6 @@ setopt    incappendhistory  # Immediately append to the history file, not just w
 # autocd
 setopt autocd
 
-# extened expansion
-setopt extendedglob
-
 # completions
 zstyle :compinstall filename '/Users/danielwood/.zshrc'
 
@@ -34,8 +31,10 @@ source $HOME/.pyenv/versions/3.5.2/bin/virtualenvwrapper.sh
 
 # aliases
 alias ls='exa'
-alias la='exa --header --long --all --git'
+alias la='exa --header --long --all'
 alias greset='git reset --hard @{u}'
+alias gsu='git submodule update'
+alias gpf='git push -f'
 
 # functions
 fbr() {
