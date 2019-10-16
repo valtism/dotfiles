@@ -22,18 +22,10 @@ antibody bundle < ~/.zsh_plugins.txt
 # fnm
 eval "$(fnm env --multi)"
 
-# the-fuck
-eval $(thefuck --alias)
-
-# pyenv
-eval "$(pyenv init -)"
-source $HOME/.pyenv/versions/3.5.2/bin/virtualenvwrapper.sh
-
 # aliases
 alias ls='exa'
 alias la='exa --header --long --all'
 alias greset='git reset --hard @{u}'
-alias gsu='git submodule update'
 alias gpf='git push -f'
 
 # functions
