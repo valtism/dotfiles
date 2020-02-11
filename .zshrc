@@ -6,6 +6,7 @@ setopt    appendhistory     # Append history to the history file (no overwriting
 setopt    sharehistory      # Share history across terminals
 setopt    incappendhistory  # Immediately append to the history file, not just when a term is killed
 
+setopt histignorespace # Don't save commands with a space 
 # autocd
 setopt autocd
 
