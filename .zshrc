@@ -23,6 +23,9 @@ antibody bundle < ~/.zsh_plugins.txt
 # fnm
 eval "$(fnm env --multi)"
 
+# rbenv
+eval "$(rbenv init -)"
+
 # aliases
 alias ls='exa'
 alias la='exa --header --long --all'
