@@ -27,7 +27,8 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # fnm
-eval "$(fnm env --multi)"
+#eval "$(fnm env --multi)"
+eval "$(fnm env)"
 
 # rbenv
 eval "$(rbenv init -)"
