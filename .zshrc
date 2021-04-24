@@ -1,12 +1,13 @@
 # History Configuration
-HISTSIZE=50000               # How many lines of history to keep in memory
+HISTSIZE=50000              # How many lines of history to keep in memory
 HISTFILE=~/.zsh_history     # Where to save history to disk
-SAVEHIST=50000               # Number of history entries to save to disk
+SAVEHIST=50000              # Number of history entries to save to disk
 setopt    appendhistory     # Append history to the history file (no overwriting)
 setopt    sharehistory      # Share history across terminals
 setopt    incappendhistory  # Immediately append to the history file, not just when a term is killed
 
-setopt histignorespace # Don't save commands with a space 
+setopt histignorespace      # Don't save commands with a space 
+
 # autocd
 setopt autocd
 
@@ -27,7 +28,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # fnm
-#eval "$(fnm env --multi)"
 eval "$(fnm env)"
 
 # rbenv
