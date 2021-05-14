@@ -36,6 +36,7 @@ eval "$(rbenv init -)"
 # aliases
 alias ls='exa'
 alias la='exa --header --long --all'
+alias cat='bat --plain --paging=never --theme=Visual\ Studio\ Dark+'
 alias greset='git reset --hard @{u}'
 alias gpf='git push -f'
 
@@ -47,3 +48,5 @@ fbr() {
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -9,3 +9,4 @@ set wildmenu
 set showmatch
 set incsearch
 set hlsearch
+set mouse=a
