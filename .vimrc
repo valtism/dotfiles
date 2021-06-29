@@ -10,3 +10,5 @@ set showmatch
 set incsearch
 set hlsearch
 set mouse=a
+:map <ScrollWheelUp> <C-Y>
+:map <ScrollWheelDown> <C-E>

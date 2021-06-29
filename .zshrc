@@ -35,17 +35,47 @@ eval "$(rbenv init -)"
 # aliases
 alias ls='exa'
 alias la='exa --header --long --all'
-alias cat='bat --plain --paging=never --theme=Visual\ Studio\ Dark+'
+alias tree='exa --tree --level=3 --git-ignore'
+alias cat='bat --plain --paging=never --tabs=4 --theme=Visual\ Studio\ Dark+'
 alias greset='git reset --hard @{u}'
 alias gpf='git push -f'
 
 # functions
 fbr() {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
+    local branches branch
+    branches=$(git branch --all | grep -v HEAD) &&
+    branch=$(echo "$branches" |
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+    git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+fatgit() {
+    git rev-list --all --objects | \
+    sed -n $(git rev-list --objects --all | \
+    cut -f1 -d' ' | \
+    git cat-file --batch-check | \
+    grep blob | \
+    sort -n -k 3 | \
+    tail -n40 | \
+    while read hash type size; do
+         echo -n "-e s/$hash/$size/p ";
+    done) | \
+    sort -n -k1
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored _approximate
+zstyle :compinstall filename '/Users/valty/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+
+#### FIG ENV VARIABLES ####
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
+
+

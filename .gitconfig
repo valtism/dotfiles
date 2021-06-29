@@ -1,3 +1,5 @@
 [user]
 	name = Dan Wood
 	email = daniel4wood@icloud.com
+[color]
+	ui = auto
