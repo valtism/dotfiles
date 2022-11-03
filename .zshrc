@@ -7,8 +7,8 @@
 # generate and source plugins from ~/.zsh_plugins.txt
 antidote load
 
-# fnm (Fast Node Manager)
-eval "$(fnm env --use-on-cd)"
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # aliases
 alias ls='exa'
@@ -18,6 +18,7 @@ alias cat='bat --plain --paging=never --tabs=4 --theme=Visual\ Studio\ Dark+'
 alias greset='git reset --hard @{u}'
 alias gpf='git push -f'
 alias cls='printf "\033c"'
+alias dl='yt-dlp'
 
 # functions
 
@@ -59,3 +60,28 @@ pryup() {
     tmux send 'rbenv' C-m
     tmux send 'rails server' C-m
 }
+
+# bun completions
+[ -s "/Users/valtism/.bun/_bun" ] && source "/Users/valtism/.bun/_bun"
+
+# bun
+export BUN_INSTALL="/Users/valtism/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# Python (miniconda)
+. /opt/miniconda3/bin/activate py310
