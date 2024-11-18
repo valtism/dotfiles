@@ -1,8 +1,0 @@
-agkozak/zsh-z
-mattmc3/zephyr
-zsh-users/zsh-completions
-zsh-users/zsh-autosuggestions
-zdharma-continuum/history-search-multi-word
-
-sindresorhus/pure
-zdharma-continuum/fast-syntax-highlighting
