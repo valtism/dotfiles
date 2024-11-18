@@ -15,5 +15,6 @@ rupa/z
 
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-autosuggestions
+zdharma-continuum/history-search-multi-word
 
 sindresorhus/pure     kind:fpath
