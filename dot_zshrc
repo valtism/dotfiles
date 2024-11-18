@@ -1,0 +1,33 @@
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+antidote load
+
+autoload -Uz promptinit
+promptinit
+prompt pure
+
+alias ls='eza'
+alias la='eza --header --long --all'
+alias tree='eza --tree --level=3 --git-ignore'
+alias cat='bat --plain --paging=never --tabs=4 --theme=Visual\ Studio\ Dark+'
+alias greset='git reset --hard @{u}'
+alias gpf='git push -f'
+alias cls='printf "\033c"'
+alias dl='yt-dlp'
+alias nx="nlx"
+
+fbr() {
+    local branches branch
+    branches=$(git branch --all | grep -v HEAD) &&
+    branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+    git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+# bun completions
+[ -s "/Users/valtism/.bun/_bun" ] && source "/Users/valtism/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+eval "$(~/.local/bin/mise activate zsh)"
